@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base theme — Compose handles most styling; this is the window-level theme -->
+    <style name="Theme.LMTourism" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@color/splash_bg</item>
+    </style>
+
+    <!-- Splash Screen theme using the core-splashscreen API -->
+    <style name="Theme.LMTourism.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_bg</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
+        <item name="windowSplashScreenBrandingImage">@drawable/ic_splash_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.LMTourism</item>
+    </style>
+</resources>

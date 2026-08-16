@@ -1,0 +1,6 @@
+com.example.lm_tourism.test.app-androidTest-0 C:\Users\mathi\LM_Tourism\app\build\generated\res\resValues\androidTest\debug
+com.example.lm_tourism.test.app-updated_navigation_xml-1 C:\Users\mathi\LM_Tourism\app\build\generated\updated_navigation_xml\debugAndroidTest
+com.example.lm_tourism.test.app-mergeDebugAndroidTestResources-2 C:\Users\mathi\LM_Tourism\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.lm_tourism.test.app-mergeDebugAndroidTestResources-3 C:\Users\mathi\LM_Tourism\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.lm_tourism.test.app-debugAndroidTest-4 C:\Users\mathi\LM_Tourism\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
+gradleHome-0 C:\Users\mathi\.gradle

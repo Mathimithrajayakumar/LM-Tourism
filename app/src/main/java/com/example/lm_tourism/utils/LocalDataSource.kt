@@ -1,0 +1,403 @@
+package com.example.lm_tourism.utils
+
+import com.example.lm_tourism.model.Monument
+
+/**
+ * Embedded local monument data — 12 iconic Indian monuments.
+ *
+ * This data is used as an offline fallback when Firestore is unavailable,
+ * and also to seed the Firestore 'monuments' collection on first run.
+ *
+ * Image URLs point to Wikimedia Commons (publicly licensed).
+ */
+object LocalDataSource {
+
+    val monuments: List<Monument> = listOf(
+
+        Monument(
+            id = "taj_mahal",
+            name = "Taj Mahal",
+            location = "Dharmapuri, Agra",
+            city = "Agra",
+            state = "Uttar Pradesh",
+            description = "An ivory-white marble mausoleum on the southern bank of the Yamuna river, the Taj Mahal is a UNESCO World Heritage Site and one of the Seven Wonders of the World.",
+            history = "Built by Mughal emperor Shah Jahan between 1632 and 1653 as a mausoleum for his favourite wife Mumtaz Mahal, who died giving birth to their 14th child. Over 20,000 artisans worked for 22 years to complete it.",
+            architecture = "Mughal architecture blending Islamic, Persian, Ottoman Turkish and Indian architectural styles. The central dome reaches 73 metres. Four minarets stand at each corner, slightly tilted outward so that in case of an earthquake they would fall away from the tomb.",
+            builtBy = "Emperor Shah Jahan",
+            year = 1653,
+            dynasty = "Mughal",
+            unescoStatus = true,
+            openingTime = "6:00 AM",
+            closingTime = "6:30 PM",
+            closedOn = "Friday",
+            entryFee = 1300.0,
+            entryFeeIndian = 50.0,
+            bestVisitingTime = "October to March (sunrise recommended)",
+            imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/1280px-Taj_Mahal_%28Edited%29.jpeg",
+            rating = 4.9f,
+            reviewCount = 125430,
+            latitude = 27.1751,
+            longitude = 78.0421,
+            officialBookingUrl = "https://asi.payumoney.com/",
+            category = "Mausoleum",
+            tags = listOf("UNESCO", "Wonder", "Mughal", "Marble"),
+            isFeatured = true
+        ),
+
+        Monument(
+            id = "red_fort",
+            name = "Red Fort",
+            location = "Netaji Subhash Marg, Lal Qila",
+            city = "New Delhi",
+            state = "Delhi",
+            description = "The Red Fort is a historic fort that served as the main residence of Mughal emperors for nearly 200 years. Its red sandstone walls span 2.4 km.",
+            history = "Commissioned by Shah Jahan in 1638 when he moved the Mughal capital from Agra to Delhi. Construction completed in 1648. India's Prime Minister delivers Independence Day speeches from its ramparts every 15 August.",
+            architecture = "Mughal architecture with Persian, Timurid and Hindu influences. Built primarily with red sandstone. The fort's octagonal towers and intricate lattice screens (jalis) are signature features.",
+            builtBy = "Emperor Shah Jahan",
+            year = 1648,
+            dynasty = "Mughal",
+            unescoStatus = true,
+            openingTime = "9:30 AM",
+            closingTime = "4:30 PM",
+            closedOn = "Monday",
+            entryFee = 600.0,
+            entryFeeIndian = 35.0,
+            bestVisitingTime = "October to March",
+            imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Red_Fort_in_New_Delhi_03-2016.jpg/1280px-Red_Fort_in_New_Delhi_03-2016.jpg",
+            rating = 4.5f,
+            reviewCount = 89200,
+            latitude = 28.6562,
+            longitude = 77.2410,
+            officialBookingUrl = "https://asi.payumoney.com/",
+            category = "Fort",
+            tags = listOf("UNESCO", "Mughal", "Sandstone", "Delhi"),
+            isFeatured = true
+        ),
+
+        Monument(
+            id = "qutub_minar",
+            name = "Qutub Minar",
+            location = "Mehrauli, New Delhi",
+            city = "New Delhi",
+            state = "Delhi",
+            description = "The Qutub Minar is a 73-metre tapering tower of victory and the world's tallest brick minaret. Part of the Qutb complex, a UNESCO World Heritage Site.",
+            history = "Construction began in 1193 by Qutb ud-Din Aibak after the defeat of the last Hindu kingdom in Delhi, continued by his successors. Five storeys of red sandstone and marble rise to 72.5 m.",
+            architecture = "Indo-Islamic architecture. The tower has a 14.3 m base diameter tapering to 2.7 m at the top. Bands of intricate carvings and calligraphy adorn each storey.",
+            builtBy = "Qutb ud-Din Aibak (begun), completed by Iltutmish",
+            year = 1220,
+            dynasty = "Delhi Sultanate (Mamluk)",
+            unescoStatus = true,
+            openingTime = "7:00 AM",
+            closingTime = "5:00 PM",
+            closedOn = "None",
+            entryFee = 600.0,
+            entryFeeIndian = 30.0,
+            bestVisitingTime = "October to March",
+            imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Qutb_Minar_2010.jpg/640px-Qutb_Minar_2010.jpg",
+            rating = 4.4f,
+            reviewCount = 67800,
+            latitude = 28.5244,
+            longitude = 77.1855,
+            officialBookingUrl = "https://asi.payumoney.com/",
+            category = "Minaret",
+            tags = listOf("UNESCO", "Delhi Sultanate", "Brick"),
+            isFeatured = false
+        ),
+
+        Monument(
+            id = "amber_fort",
+            name = "Amber Fort",
+            location = "Devisinghpura, Amer, Jaipur",
+            city = "Jaipur",
+            state = "Rajasthan",
+            description = "Amber Fort is a majestic hilltop fort overlooking Maota Lake. Part of the Hill Forts of Rajasthan UNESCO site.",
+            history = "Built by Raja Man Singh I in 1592 on the foundations of an older Meena fort. Successive Maharajas expanded it with palaces, halls and gardens. The fort was the capital of Amer state for centuries.",
+            architecture = "Rajput style using pale yellow and pink sandstone and white marble. Notable for its large ramparts, series of gates and cobbled paths, and the ornate Sheesh Mahal (Mirror Palace) with thousands of tiny mirrors.",
+            builtBy = "Raja Man Singh I",
+            year = 1592,
+            dynasty = "Kachhwaha Rajput",
+            unescoStatus = true,
+            openingTime = "8:00 AM",
+            closingTime = "5:30 PM",
+            closedOn = "None",
+            entryFee = 550.0,
+            entryFeeIndian = 100.0,
+            bestVisitingTime = "November to February",
+            imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/India_-_Amber_Fort_-_0075.jpg/1280px-India_-_Amber_Fort_-_0075.jpg",
+            rating = 4.7f,
+            reviewCount = 54300,
+            latitude = 26.9855,
+            longitude = 75.8513,
+            officialBookingUrl = "https://asi.payumoney.com/",
+            category = "Fort",
+            tags = listOf("UNESCO", "Rajput", "Rajasthan", "Hilltop"),
+            isFeatured = true
+        ),
+
+        Monument(
+            id = "hawa_mahal",
+            name = "Hawa Mahal",
+            location = "Badi Chaupad, J.D.A. Market, Jaipur",
+            city = "Jaipur",
+            state = "Rajasthan",
+            description = "The Palace of Winds is a five-storey pink sandstone structure with 953 small windows (jharokhas) decorated with intricate lattice work.",
+            history = "Built in 1799 by Maharaja Sawai Pratap Singh as an extension of the royal City Palace. Its unique design allowed royal women to observe street festivities while remaining unseen (purdah system).",
+            architecture = "Rajput-Mughal style. The facade resembles the crown of Krishna. The latticed windows (jharokhas) create a natural air conditioning effect — hence 'Palace of Winds'. Built entirely of red and pink sandstone.",
+            builtBy = "Maharaja Sawai Pratap Singh",
+            year = 1799,
+            dynasty = "Kachhwaha Rajput",
+            unescoStatus = false,
+            openingTime = "9:00 AM",
+            closingTime = "5:00 PM",
+            closedOn = "None",
+            entryFee = 200.0,
+            entryFeeIndian = 50.0,
+            bestVisitingTime = "October to March (morning for sunlit facade)",
+            imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Hawa_Mahal_Jaipur_Rajasthan_India.jpg/640px-Hawa_Mahal_Jaipur_Rajasthan_India.jpg",
+            rating = 4.6f,
+            reviewCount = 43700,
+            latitude = 26.9239,
+            longitude = 75.8267,
+            officialBookingUrl = "https://asi.payumoney.com/",
+            category = "Palace",
+            tags = listOf("Pink City", "Rajput", "Jaipur", "Architecture"),
+            isFeatured = false
+        ),
+
+        Monument(
+            id = "mysore_palace",
+            name = "Mysore Palace",
+            location = "Sayyaji Rao Road, Agrahara",
+            city = "Mysore",
+            state = "Karnataka",
+            description = "One of India's most visited monuments, the Mysore Palace is the official residence of the Wadiyar dynasty and seat of the Kingdom of Mysore.",
+            history = "The current palace was built in 1912 by Nalwadi Krishnaraja Wadiyar after the original wooden palace burned down in 1897. It was designed by British architect Henry Irwin. The palace is illuminated with nearly 100,000 lights every Sunday and on holidays.",
+            architecture = "Indo-Saracenic style incorporating Rajput, Mughal, Hindu and Gothic elements. Three-storey structure in grey granite with pink marble domes. The interior is equally opulent with stained glass, carved wooden doors, and mosaic floors.",
+            builtBy = "Nalwadi Krishnaraja Wadiyar (Wadiyar Dynasty)",
+            year = 1912,
+            dynasty = "Wadiyar",
+            unescoStatus = false,
+            openingTime = "10:00 AM",
+            closingTime = "5:30 PM",
+            closedOn = "None",
+            entryFee = 100.0,
+            entryFeeIndian = 70.0,
+            bestVisitingTime = "October (Dasara festival) or any time of year",
+            imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Mysore_Palace_illuminated.jpg/1280px-Mysore_Palace_illuminated.jpg",
+            rating = 4.8f,
+            reviewCount = 71200,
+            latitude = 12.3052,
+            longitude = 76.6552,
+            officialBookingUrl = "https://www.mysorepalace.gov.in/",
+            category = "Palace",
+            tags = listOf("Wadiyar", "Karnataka", "Illuminated", "Heritage"),
+            isFeatured = true
+        ),
+
+        Monument(
+            id = "charminar",
+            name = "Charminar",
+            location = "Charminar Rd, Char Kaman",
+            city = "Hyderabad",
+            state = "Telangana",
+            description = "Built in 1591, the Charminar ('four minarets') is a monument and mosque that has become a global icon of Hyderabad.",
+            history = "Commissioned by Muhammad Quli Qutb Shah in 1591, legend says to commemorate the end of a deadly plague. It stands at the intersection of the old city's main thoroughfares.",
+            architecture = "Qutb Shahi architecture with Indo-Islamic influences. The square structure has four grand arches facing four directions and four minarets rising 56 metres. The upper floor houses a mosque.",
+            builtBy = "Muhammad Quli Qutb Shah",
+            year = 1591,
+            dynasty = "Qutb Shahi",
+            unescoStatus = false,
+            openingTime = "9:30 AM",
+            closingTime = "5:30 PM",
+            closedOn = "None",
+            entryFee = 25.0,
+            entryFeeIndian = 5.0,
+            bestVisitingTime = "October to March",
+            imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Charminar_moody_Nahid_Sultana.jpg/800px-Charminar_moody_Nahid_Sultana.jpg",
+            rating = 4.4f,
+            reviewCount = 38900,
+            latitude = 17.3616,
+            longitude = 78.4747,
+            officialBookingUrl = "https://asi.payumoney.com/",
+            category = "Mosque & Monument",
+            tags = listOf("Hyderabad", "Qutb Shahi", "Icon"),
+            isFeatured = false
+        ),
+
+        Monument(
+            id = "gateway_of_india",
+            name = "Gateway of India",
+            location = "Apollo Bandar, Colaba",
+            city = "Mumbai",
+            state = "Maharashtra",
+            description = "The Gateway of India is an arch monument built in the early 20th century to commemorate the visit of King George V and Queen Mary.",
+            history = "Built between 1915 and 1924. The foundation stone was laid in 1913. It was the point from which the last British troops left India in 1948 after independence. Designed by architect George Wittet.",
+            architecture = "Indo-Saracenic architecture incorporating elements of 16th-century Gujarati style. The arch is 26 metres high, made of basalt. Four turrets adorn the top, and intricate lattice work decorates the central arch.",
+            builtBy = "British India Government (George Wittet, architect)",
+            year = 1924,
+            dynasty = "British Colonial",
+            unescoStatus = false,
+            openingTime = "Open 24 hours",
+            closingTime = "Open 24 hours",
+            closedOn = "None",
+            entryFee = 0.0,
+            entryFeeIndian = 0.0,
+            bestVisitingTime = "October to February (early morning for photos)",
+            imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Mumbai_03-2016_30_Gateway_of_India.jpg/1280px-Mumbai_03-2016_30_Gateway_of_India.jpg",
+            rating = 4.6f,
+            reviewCount = 93100,
+            latitude = 18.9220,
+            longitude = 72.8347,
+            officialBookingUrl = "",
+            category = "Arch Monument",
+            tags = listOf("Mumbai", "Colonial", "Seafront", "Free Entry"),
+            isFeatured = true
+        ),
+
+        Monument(
+            id = "victoria_memorial",
+            name = "Victoria Memorial",
+            location = "Victoria Memorial Hall, Queens Way",
+            city = "Kolkata",
+            state = "West Bengal",
+            description = "A massive white marble building dedicated to Queen Victoria, now a museum with 25 galleries housing 25,000+ artefacts of the British Raj.",
+            history = "Commissioned by Lord Curzon after Queen Victoria's death in 1901. Construction completed in 1921. Designed by William Emerson, it took 18 years to build using Makrana marble (the same quarry as the Taj Mahal).",
+            architecture = "Indo-Saracenic revival style with Venetian, Mughal, Egyptian, Deccani and British elements. The 56-metre central dome is crowned by a rotating bronze Angel of Victory. Surrounded by 64 acres of Mughal gardens.",
+            builtBy = "Lord Curzon, Viceroy of India",
+            year = 1921,
+            dynasty = "British Colonial",
+            unescoStatus = false,
+            openingTime = "10:00 AM",
+            closingTime = "5:00 PM",
+            closedOn = "Monday",
+            entryFee = 200.0,
+            entryFeeIndian = 30.0,
+            bestVisitingTime = "October to March",
+            imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Victoria_Memorial_Kolkata_2011.jpg/1280px-Victoria_Memorial_Kolkata_2011.jpg",
+            rating = 4.7f,
+            reviewCount = 61800,
+            latitude = 22.5448,
+            longitude = 88.3426,
+            officialBookingUrl = "https://victoriamemorial-cal.org/",
+            category = "Memorial & Museum",
+            tags = listOf("Kolkata", "British", "Museum", "Marble"),
+            isFeatured = false
+        ),
+
+        Monument(
+            id = "konark_sun_temple",
+            name = "Konark Sun Temple",
+            location = "Konark, Puri",
+            city = "Konark",
+            state = "Odisha",
+            description = "A 13th-century Sun Temple designed as a colossal chariot of the Sun God Surya, with intricately carved stone wheels and horses.",
+            history = "Built around 1250 CE by King Narasimhadeva I of the Eastern Ganga dynasty. The main tower (shikhara) was 70 metres tall but collapsed. The audience hall (Jagamohana) is still intact. It is a UNESCO World Heritage Site.",
+            architecture = "Kalinga style of architecture. The entire temple is shaped as a chariot with 24 wheels (each 3 metres diameter) and 7 horses. Every surface is covered with carvings depicting celestial beings, erotic sculptures, animals and everyday life.",
+            builtBy = "King Narasimhadeva I",
+            year = 1250,
+            dynasty = "Eastern Ganga",
+            unescoStatus = true,
+            openingTime = "6:00 AM",
+            closingTime = "8:00 PM",
+            closedOn = "None",
+            entryFee = 600.0,
+            entryFeeIndian = 40.0,
+            bestVisitingTime = "December (Konark Dance Festival)",
+            imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Konarka_Temple.jpg/1280px-Konarka_Temple.jpg",
+            rating = 4.6f,
+            reviewCount = 29400,
+            latitude = 19.8876,
+            longitude = 86.0945,
+            officialBookingUrl = "https://asi.payumoney.com/",
+            category = "Temple",
+            tags = listOf("UNESCO", "Odisha", "Sun God", "Sculpture"),
+            isFeatured = false
+        ),
+
+        Monument(
+            id = "hampi",
+            name = "Hampi Ruins",
+            location = "Hampi, Ballari District",
+            city = "Hampi",
+            state = "Karnataka",
+            description = "A UNESCO World Heritage Site, Hampi is a vast open-air museum of ruins of the Vijayanagara Empire, spread over 4,187 hectares.",
+            history = "Hampi was the capital of the Vijayanagara Empire (1336–1646 CE), at its peak one of the world's largest cities. It was sacked by the Deccan Sultanates in 1565 and never rebuilt. The ruins include temples, royal enclosures, market streets and water systems.",
+            architecture = "Vijayanagara style — a fusion of Chalukya, Hoysala, Pandya and Chola styles. The Virupaksha Temple with its 50-metre gopura (tower) is still in active worship. Stone chariot and elephant stables are iconic structures.",
+            builtBy = "Vijayanagara Empire (multiple rulers)",
+            year = 1336,
+            dynasty = "Vijayanagara",
+            unescoStatus = true,
+            openingTime = "6:00 AM",
+            closingTime = "6:00 PM",
+            closedOn = "None",
+            entryFee = 600.0,
+            entryFeeIndian = 40.0,
+            bestVisitingTime = "October to February",
+            imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Virupaksha_Temple_2007.jpg/1280px-Virupaksha_Temple_2007.jpg",
+            rating = 4.8f,
+            reviewCount = 41500,
+            latitude = 15.3350,
+            longitude = 76.4600,
+            officialBookingUrl = "https://asi.payumoney.com/",
+            category = "Ruins & Temple Complex",
+            tags = listOf("UNESCO", "Vijayanagara", "Karnataka", "Ruins"),
+            isFeatured = true
+        ),
+
+        Monument(
+            id = "ajanta_caves",
+            name = "Ajanta Caves",
+            location = "Ajanta, Aurangabad",
+            city = "Aurangabad",
+            state = "Maharashtra",
+            description = "30 rock-cut Buddhist cave monuments dating from the 2nd century BCE to 480 CE, featuring masterpiece paintings and sculptures.",
+            history = "Excavated over several centuries, these caves served as Buddhist monasteries and worship halls. Abandoned and forgotten for centuries, they were rediscovered by a British officer John Smith in 1819. A UNESCO World Heritage Site since 1983.",
+            architecture = "Rock-cut architecture. Two types: chaitya-grihas (prayer halls with apse-ended nave) and viharas (monasteries with cells). Cave 1 and 2 have the most elaborate paintings. Cave 26 has a 7-metre reclining Buddha.",
+            builtBy = "Buddhist monks and artisans (multiple phases)",
+            year = 200,
+            dynasty = "Satavahana, Vakataka",
+            unescoStatus = true,
+            openingTime = "9:00 AM",
+            closingTime = "5:30 PM",
+            closedOn = "Monday",
+            entryFee = 600.0,
+            entryFeeIndian = 40.0,
+            bestVisitingTime = "November to March",
+            imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Ajanta_cave9_front.jpg/1280px-Ajanta_cave9_front.jpg",
+            rating = 4.7f,
+            reviewCount = 33600,
+            latitude = 20.5519,
+            longitude = 75.7033,
+            officialBookingUrl = "https://asi.payumoney.com/",
+            category = "Cave Monastery",
+            tags = listOf("UNESCO", "Buddhist", "Paintings", "Maharashtra"),
+            isFeatured = false
+        )
+    )
+
+    /** Returns monuments marked as featured. */
+    fun getFeatured(): List<Monument> = monuments.filter { it.isFeatured }
+
+    /** Returns monuments ordered by rating (highest first). */
+    fun getPopular(): List<Monument> = monuments.sortedByDescending { it.rating }
+
+    /** Returns the first 5 monuments as a placeholder for 'Nearby'. */
+    fun getNearby(): List<Monument> = monuments.take(5)
+
+    /** Finds a monument by its [id], or null if not found. */
+    fun findById(id: String): Monument? = monuments.firstOrNull { it.id == id }
+
+    /** Simple keyword search across name, city, description, and tags. */
+    fun search(query: String): List<Monument> {
+        if (query.isBlank()) return monuments
+        val q = query.trim().lowercase()
+        return monuments.filter { m ->
+            m.name.lowercase().contains(q) ||
+            m.city.lowercase().contains(q) ||
+            m.state.lowercase().contains(q) ||
+            m.description.lowercase().contains(q) ||
+            m.category.lowercase().contains(q) ||
+            m.tags.any { it.lowercase().contains(q) }
+        }
+    }
+}
