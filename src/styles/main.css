@@ -1539,3 +1539,374 @@ input {
   color: white !important;
 }
 
+/* ─── Android Mobile Responsiveness & Safe Area Optimizations ──────────── */
+
+/* 1. Global Viewport & Reset Fixes */
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100vw;
+  touch-action: manipulation;
+}
+
+#app {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+}
+
+@media (min-width: 768px) {
+  #app {
+    padding-bottom: 0;
+  }
+}
+
+/* Universal Word Wrap to prevent text overflow */
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.section-title,
+.monument-title,
+.place-title,
+.card-title,
+.brand-title,
+p {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* 2. Responsive Header Adjustments */
+@media (max-width: 767px) {
+  .app-header {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .brand-logo {
+    gap: 8px;
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 10px;
+  }
+
+  .brand-title {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .header-actions {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .header-actions .icon-btn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+
+  .header-actions .lang-btn,
+  .header-actions .ai-btn {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 375px) {
+  .app-header {
+    padding: 8px 10px;
+  }
+  .brand-title {
+    font-size: 0.98rem;
+  }
+  .header-actions {
+    gap: 4px;
+  }
+}
+
+/* 3. Responsive Hero Section & Search Bar */
+@media (max-width: 767px) {
+  .hero-section {
+    margin: 10px 10px 16px 10px;
+    padding: 24px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .hero-tagline {
+    padding: 4px 10px;
+    font-size: 0.78rem;
+    margin-bottom: 12px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.35rem, 6.2vw, 2rem);
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.88rem;
+    line-height: 1.4;
+    margin-bottom: 18px;
+  }
+
+  .search-box-large {
+    padding: 4px 6px 4px 14px;
+    gap: 6px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .search-box-large input {
+    font-size: 0.9rem;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .search-box-large button {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-height: 40px;
+    border-radius: var(--radius-full);
+  }
+}
+
+@media (max-width: 380px) {
+  .search-box-large button .btn-text-label {
+    display: none;
+  }
+  .search-box-large button {
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    justify-content: center;
+  }
+}
+
+/* 4. Responsive Grid & Card Layouts (Home, Explore, State Selector) */
+@media (max-width: 767px) {
+  .quick-actions-grid {
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .action-card {
+    padding: 12px 8px;
+  }
+
+  .action-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .action-label {
+    font-size: 0.78rem;
+  }
+
+  .section-title {
+    margin: 20px 12px 10px 12px;
+    font-size: 1.15rem;
+  }
+
+  .monuments-grid,
+  .places-grid,
+  .state-grid,
+  .favorites-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+    padding: 0 10px;
+  }
+
+  .monuments-carousel {
+    padding: 8px 10px 16px 10px;
+    gap: 12px;
+  }
+
+  .featured-card {
+    flex: 0 0 84vw;
+    max-width: 320px;
+    height: 200px;
+  }
+
+  .place-card,
+  .monument-card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* 5. Responsive Trip Planner Page */
+@media (max-width: 767px) {
+  .planner-container,
+  .planner-card,
+  .trip-planner-view {
+    padding: 14px 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .form-grid,
+  .planner-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .form-control,
+  .form-select,
+  .form-input {
+    width: 100%;
+    font-size: 16px !important; /* Prevents auto-zoom on Android input focus */
+    min-height: 44px;
+    padding: 10px 12px;
+    box-sizing: border-box;
+  }
+
+  .chip-group,
+  .style-chips {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .chip-btn {
+    min-height: 42px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+
+  .btn-primary,
+  .btn-planner-submit {
+    min-height: 48px;
+    font-size: 0.98rem;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}
+
+/* 6. Responsive Filter Chips & Explore Bar */
+@media (max-width: 767px) {
+  .explore-filters,
+  .category-bar,
+  .filter-scroll-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 10px 12px 10px;
+    scrollbar-width: none;
+  }
+
+  .explore-filters::-webkit-scrollbar,
+  .category-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-chip {
+    display: inline-flex;
+    min-height: 38px;
+    padding: 6px 14px;
+    font-size: 0.82rem;
+  }
+}
+
+/* 7. Bottom Navigation & Android Safe Area Handling */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 990;
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 4px calc(8px + env(safe-area-inset-bottom, 0px)) 4px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 2px;
+  min-height: 48px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  background: transparent;
+}
+
+.bottom-tab .material-symbols-rounded {
+  font-size: 22px;
+}
+
+@media (max-width: 360px) {
+  .bottom-tab {
+    font-size: 0.64rem;
+  }
+  .bottom-tab .material-symbols-rounded {
+    font-size: 20px;
+  }
+}
+
+/* 8. Mobile Modals & Bottom Sheet Drawers */
+@media (max-width: 640px) {
+  .modal-overlay,
+  .modal-backdrop {
+    padding: 0;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .modal-content,
+  .modal-dialog,
+  .monument-detail-modal,
+  .booking-modal,
+  .compare-modal {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 92vh !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    margin: 0 !important;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .modal-header {
+    padding: 14px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg-surface);
+  }
+}
+
+
