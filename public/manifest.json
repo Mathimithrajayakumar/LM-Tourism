@@ -1,0 +1,41 @@
+{
+  "name": "LM Tourism — Explore History Through AI and AR",
+  "short_name": "LM Tourism",
+  "description": "Discover India's heritage and historic monuments through generative AI guides, interactive 3D AR previews, and seamless trip planning.",
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#4f46e5",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "LM Tourism Home Screen"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "LM Tourism Mobile App"
+    }
+  ]
+}
