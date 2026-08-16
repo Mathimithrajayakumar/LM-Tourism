@@ -381,7 +381,7 @@ window.logout = async () => {
 };
 
 // ─── Initialization ───────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', async () => {
+async function initApp() {
   StorageService.setTheme(StorageService.getTheme());
   const initialLang = StorageService.getLanguage() || 'en';
   appState.language = initialLang;
@@ -434,4 +434,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     appState.isLoading = false;
     renderApp();
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
+
